@@ -1,5 +1,15 @@
 import { Link } from "react-router-dom";
 
+const informationLinks = [
+  { to: "/about", label: "About Us" },
+  { to: "/blog", label: "Blogs" },
+  { to: "/privacy-policy", label: "Privacy Policy" },
+  { to: "/shipping-delivery", label: "Shipping Policy" },
+  { to: "/return-refund-policy", label: "Return Policy" },
+  { to: "/terms-and-conditions", label: "T&C and Disclaimer" },
+  { to: "/contacts", label: "Contact Us" },
+];
+
 export function Footer() {
   return (
     <footer className="mt-14 border-t border-slate-200/70 bg-slate-950 text-slate-300">
@@ -19,12 +29,15 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="text-sm font-semibold text-white">Explore</div>
+          <div className="text-sm font-semibold text-white">Information</div>
           <ul className="mt-3 space-y-2 text-sm text-slate-400">
-            <li><Link to="/catalog" className="hover:text-white">Catalog</Link></li>
-            <li><Link to="/blog" className="hover:text-white">Blog</Link></li>
-            <li><Link to="/about" className="hover:text-white">About</Link></li>
-            <li><Link to="/contacts" className="hover:text-white">Contacts</Link></li>
+            {informationLinks.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="transition hover:text-white">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -40,11 +53,29 @@ export function Footer() {
 
         <div>
           <div className="text-sm font-semibold text-white">Support</div>
-          <div className="mt-3 space-y-2 text-sm text-slate-400">
-            <p>support@softmart.example</p>
-            <p>+1 800 799 99 99</p>
-            <p>Mon-Sun: 10:00-22:00</p>
-          </div>
+          <ul className="mt-3 space-y-2 text-sm text-slate-400">
+            <li>
+              <a className="hover:text-white" href="mailto:digitalworld9871@gmail.com">
+                digitalworld9871@gmail.com
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-white" href="tel:+919871919701">
+                9871919701
+              </a>
+            </li>
+            <li>
+              <a
+                className="hover:text-white"
+                href="https://digitalworldox.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                digitalworldox.com
+              </a>
+            </li>
+            <li><Link to="/catalog" className="hover:text-white">Catalog</Link></li>
+          </ul>
         </div>
       </div>
 

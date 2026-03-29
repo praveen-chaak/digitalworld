@@ -11,6 +11,10 @@ import { Blog } from "./pages/Blog";
 import { BlogPost } from "./pages/BlogPost";
 import { About } from "./pages/About";
 import { Contacts } from "./pages/Contacts";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { ReturnRefundPolicy } from "./pages/ReturnRefundPolicy";
+import { ShippingDelivery } from "./pages/ShippingDelivery";
+import { TermsConditions } from "./pages/TermsConditions";
 import { NotFound } from "./pages/NotFound";
 
 const router = createBrowserRouter([
@@ -27,6 +31,10 @@ const router = createBrowserRouter([
       { path: "/blog/:slug", element: <BlogPost /> },
       { path: "/about", element: <About /> },
       { path: "/contacts", element: <Contacts /> },
+      { path: "/privacy-policy", element: <PrivacyPolicy /> },
+      { path: "/return-refund-policy", element: <ReturnRefundPolicy /> },
+      { path: "/shipping-delivery", element: <ShippingDelivery /> },
+      { path: "/terms-and-conditions", element: <TermsConditions /> },
       { path: "*", element: <NotFound /> },
     ],
   },
